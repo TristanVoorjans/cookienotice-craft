@@ -1,0 +1,132 @@
+.cookieoverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 25, 46, 0.8);
+  z-index: 101;
+}
+
+.cookiebanner,
+.cookiemodal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 110;
+  padding: 1.6rem 1.6rem;
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 53.75em) {
+  .cookiebanner,
+  .cookiemodal {
+    max-width: 80rem;
+  }
+}
+
+.cookiebanner-content,
+.cookiemodal-content {
+  padding: 1.6rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  border: 2px solid #006bc2;
+}
+@media (min-width: 48.0625em) {
+  .cookiebanner-content,
+  .cookiemodal-content {
+    padding: 3.2rem;
+  }
+}
+
+.cookiebanner-link,
+.cookiemodal-link {
+  display: inline-block;
+  -webkit-appearance: none;
+  margin-top: 1.6rem;
+  padding: 0;
+  width: auto;
+  border: 0;
+  overflow: visible;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: left;
+  text-transform: none;
+  text-decoration: underline;
+  background: transparent;
+  color: #eb5600;
+}
+.cookiebanner-link:not(:last-child),
+.cookiemodal-link:not(:last-child) {
+  margin-right: 1.6rem;
+}
+.cookiebanner-link:hover, .cookiebanner-link:focus,
+.cookiemodal-link:hover,
+.cookiemodal-link:focus {
+  color: #802f00;
+}
+.cookiebanner-link:active,
+.cookiemodal-link:active {
+  color: #572000;
+}
+
+.cookiebanner-headline {
+  font-size: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: #006bc2;
+}
+
+.cookiebanner-actions {
+  margin-top: 1.6rem;
+}
+.cookiebanner-actions > .button {
+  display: block;
+}
+
+.cookiemodal-body {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 1.6rem;
+}
+
+.cookiemodal-title {
+  font-family: "Abhaya Libre", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+  color: #eb5600;
+}
+
+.cookiemodal-option + .cookiemodal-option {
+  margin-top: 1.6rem;
+}
+
+.cookiemodal-check input[type=checkbox] {
+  margin-top: 0;
+  margin-right: 1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.cookiemodal-label {
+  font-weight: 800;
+}
+
+.cookiemodal-description {
+  margin-bottom: 0;
+  margin-left: 3rem;
+}
+
+.cookiemodal-actions:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.cookiemodal-link {
+  margin-top: 0;
+}

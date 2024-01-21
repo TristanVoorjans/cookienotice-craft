@@ -1,0 +1,96 @@
+<section id="cookiemodal" class="cookiemodal hidden" aria-labelledby="accept-cookiemodal" role="dialog"
+    aria-modal="true" tabindex="-1">
+    <div class="cookiemodal-content">
+        <div class="cookiemodal-body">
+            <h2 class="cookiemodal-headline" id="accept-cookiemodal">
+                {{ 'Cookie-instellingen'|t('cookie-notice') }}
+            </h2>
+            <p>
+                {{ 'Onze website bewaart vier soorten cookies. Je kan zelf op elk moment kiezen welke je
+                aanvaardt en welke niet. Meer informatie over wat cookies zijn en welke types cookies we
+                verzamelen kan je lezen in ons <a href="{cookieLink}" target="_blank"
+                    class="cookiemodal-pagelink">cookiebeleid</a>.'|t('cookie-notice',{cookieLink:
+                cookiePage.getUrl() ?? craft.entries.section('cookiePolicy').one().getUrl() ?? ''})|raw }}
+            </p>
+            <div class="cookiemodal-actions">
+                <button class="button button--primary js-cookie-accept notranslate">
+                    {{ 'Cookies aanvaarden'|t('cookie-notice') }}
+                </button>
+            </div>
+            <form class="cookiemodal-form">
+                <h3 class="cookiemodal-title">{{ 'Je voorkeuren aanpassen'|t('cookie-notice') }}</h3>
+                <div class="cookiemodal-options">
+                    <div class="cookiemodal-option">
+                        <div class="cookiemodal-check">
+                            <input class="js-cookie-essential" type="checkbox" name="essential" id="essential"
+                                disabled="disabled" checked="checked">
+                            <label class="cookiemodal-label" for="essential">
+                                {{ 'Essentiële cookies'|t('cookie-notice') }}
+                            </label>
+                        </div>
+                        <p class="cookiemodal-description">
+                            {{ 'zijn om technische redenen noodzakelijk voor de goede werking. Zonder deze
+                            cookies zou het kunnen dat de website niet naar behoren functioneert.'|t('cookie-notice') }}
+                        </p>
+                    </div>
+                    <div class="cookiemodal-option">
+                        <div class="cookiemodal-check">
+                            <input class="js-cookie-essential" type="checkbox" name="essential" id="functional"
+                                disabled="disabled" checked="checked">
+                            <label class="cookiemodal-label" for="essential">
+                                {{ 'Functionele cookies'|t('cookie-notice') }}</label>
+                        </div>
+                        <p class="cookiemodal-description">
+                            {{ 'zijn noodzakelijk voor bepaalde functies op de website. Zonder deze cookies
+                            kunnen sommige onderdelen onbruikbaar worden.'|t('cookie-notice') }}
+                        </p>
+                    </div>
+                    <div class="cookiemodal-option">
+                        <div class="cookiemodal-check">
+                            <input class="js-cookie-performance" type="checkbox" name="CookiePerformance"
+                                id="performance">
+                            <label class="cookiemodal-label" for="performance">
+                                {{ 'Analytische cookies'|t('cookie-notice') }}
+                            </label>
+                        </div>
+                        <p class="cookiemodal-description">
+                            {{ 'laten ons toe om het gebruik van de website anoniem te analyseren en de persoonlijke
+                            gebruikservaring te verbeteren.'|t('cookie-notice') }}
+                        </p>
+                    </div>
+                    <div class="cookiemodal-option">
+                        <div class="cookiemodal-check">
+                            <input class="js-cookie-marketing" type="checkbox" name="CookieMarketing" id="marketing">
+                            <label class="cookiemodal-label" for="marketing">
+                                {{ 'Marketingcookies'|t('cookie-notice') }}
+                            </label>
+                        </div>
+                        <p class="cookiemodal-description">
+                            {{ 'hebben als doel het personaliseren van de gebruikservaring en het tonen van
+                            relevante inhoud en aanbiedingen op deze en andere websites.'|t('cookie-notice') }}
+                        </p>
+                    </div>
+                    {% if personalization %}
+                        <div class="cookiemodal-option">
+                            <div class="cookiemodal-check">
+                                <input class="js-cookie-personalization" type="checkbox" name="CookiePersonalization" id="personalization">
+                                <label class="cookiemodal-label" for="personalization">
+                                    {{ 'Personalisatiecookies'|t('cookie-notice') }}
+                                </label>
+                            </div>
+                            <p class="cookiemodal-description">
+                                {{ 'laten ons toe om het gebruik van de website anoniem te analyseren en de algemene
+                            gebruikservaring te verbeteren'|t('cookie-notice') }}
+                            </p>
+                        </div>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+        <div class="cookiemodal-actions">
+            <button class="cookiemodal-link js-cookiemodal-close notranslate">
+                {{ 'Mijn keuze bewaren'|t('cookie-notice') }}
+            </button>
+        </div>
+    </div>
+</section>
