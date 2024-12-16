@@ -123,6 +123,7 @@ export class CookieNoticeComponent {
 
         if (cookieModal) {
             this.cookieModal.classList.add("hidden");
+            this.triggerEvent("cookienotice-modal-closed");
         }
 
         this.setSiteContainerInert(false);
